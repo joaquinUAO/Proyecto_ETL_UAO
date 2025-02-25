@@ -3,3 +3,6 @@ psycopg2
 sqlalchemy
 pandas
 kaggle
+numpy
+matplotlib
+seaborn
