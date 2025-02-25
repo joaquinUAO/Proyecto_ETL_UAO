@@ -1,0 +1,5 @@
+PyYAML
+psycopg2
+sqlalchemy
+pandas
+kaggle
