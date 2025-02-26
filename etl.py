@@ -50,7 +50,7 @@ def conectar_bd(db_config):
 def crear_tabla(conn, engine):
     with engine.connect() as conn:
         conn.execute(text("""
-            CREATE TABLE IF NOT EXISTS tabla_staging (
+            CREATE TABLE IF NOT EXISTS project1_db (
                 id SERIAL PRIMARY KEY,
                 datetime TIMESTAMP,
                 temperature FLOAT,
@@ -97,10 +97,7 @@ def extraer_a_staging():
     db_config = config["database"]
     # Realizamos la conexión a la base de datos validando su existencia
     conn, engine, existe = conectar_bd(db_config)        
-    
-    if existe == 0:
-        # Creamos la tabla con las columnas correspondientes
-        crear_tabla(conn, engine)        
+    crear_tabla(conn, engine)        
 
     # Como el nombre de las columnas en el dataframe difiere del nombre de las columnas en db, renombramos las columnas del dataframe para facilitar el cargue de datos desde python
     file_csv_rename = renombrar_dataset(file_csv)
