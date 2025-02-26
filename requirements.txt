@@ -6,3 +6,4 @@ kaggle
 numpy
 matplotlib
 seaborn
+plotly

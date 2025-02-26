@@ -90,10 +90,12 @@ def cargar_a_staging(conn, engine, file_csv):
     return data_staging
 
 def extraer_a_staging():
+    # Cargamos el archivo del dataset desde el almacenamiento local previamente descargado de kaggle
     file_csv = pd.read_csv("powerconsumption.csv", sep=",")
-
+    # Configuramos los parámetros de conexión a la base de datos
     config = load_config()
     db_config = config["database"]
+    # Realizamos la conexión a la base de datos validando su existencia
     conn, engine, existe = conectar_bd(db_config)        
     
     if existe == 0:
@@ -105,11 +107,15 @@ def extraer_a_staging():
 
     # Subimos los datos a la base de datos usando una función de pandas
     data_staging = cargar_a_staging(conn, engine, file_csv_rename)
-    print("Dataset almacenado en área de staging:")
-    print(data_staging)
+    print("Dataset almacenado en área de staging existosamente")
+    # Vamos a leer los datos de la tabla staging para verificar que quedaron almacenados
+    with engine.connect() as conn:
+        data_transform = pd.read_sql("SELECT * FROM workshopl_db", conn)
+    print(data_transform)
 
     return file_csv
 
+#### Prueba de la función de manera local, descomentar si se quiere probar desde este mismo archivo
 #file_input = extraer_a_staging()
 #print("Dataset descargado directamente:")
 #print(file_input)
