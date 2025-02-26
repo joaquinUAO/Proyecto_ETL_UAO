@@ -2,3 +2,4 @@ venv/
 config.yaml
 kaggle.json
 powerconsumption.csv
+__pycache__

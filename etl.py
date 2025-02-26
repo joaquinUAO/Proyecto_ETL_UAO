@@ -31,7 +31,7 @@ def conectar_bd(db_config):
     print("Conexión exitosa")
 
     # Creamos la base de datos para el ejercicio
-    db_name = "proyect1_db"
+    db_name = "project1_db"
     existe = 0
     try:
         with conn.cursor() as cur:
@@ -50,7 +50,7 @@ def conectar_bd(db_config):
 def crear_tabla(conn, engine):
     with engine.connect() as conn:
         conn.execute(text("""
-            CREATE TABLE IF NOT EXISTS tabla_etl (
+            CREATE TABLE IF NOT EXISTS tabla_staging (
                 id SERIAL PRIMARY KEY,
                 datetime TIMESTAMP,
                 temperature FLOAT,
@@ -82,11 +82,11 @@ def renombrar_dataset(file_csv):
     return file_csv
 
 def cargar_a_staging(conn, engine, file_csv):
-    file_csv.to_sql("proyect1_db", engine, if_exists="replace", index=False)
+    file_csv.to_sql("project1_db", engine, if_exists="replace", index=False)
     print("Datos cargados en la base de datos exitosamente.")
     # Leer datos de la tabla staging para validar
     with engine.connect() as conn:
-        data_staging = pd.read_sql("SELECT * FROM proyect1_db", conn)
+        data_staging = pd.read_sql("SELECT * FROM project1_db", conn)
     return data_staging
 
 def extraer_a_staging():
@@ -110,7 +110,7 @@ def extraer_a_staging():
     print("Dataset almacenado en área de staging existosamente")
     # Vamos a leer los datos de la tabla staging para verificar que quedaron almacenados
     with engine.connect() as conn:
-        data_transform = pd.read_sql("SELECT * FROM workshopl_db", conn)
+        data_transform = pd.read_sql("SELECT * FROM project1_db", conn)
     print(data_transform)
 
     return file_csv
