@@ -1,0 +1,6 @@
+database:
+  user: "postgres"
+  password: 1990
+  host: "localhost"
+  port: 5432
+  name: "project1_db"
