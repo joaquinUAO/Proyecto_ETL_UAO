@@ -11,15 +11,28 @@ Este proyecto implica la creación de un proceso de ETL para extraer, transforma
 La primera entrega del proyecto consta de estos pasos:
 - Fuentes de datos: seleccione una o más fuentes de datos (por ejemplo, CSV, API, bases de datos)
 - Extracción de datos: use Python para extraer los datos de la fuente y almacenarlos en una base de datos relacional
-- EDA
 
 ![alt text](image.png)
+
+## Alcance entregable 2
+
+La segunda entrega del proyecto consta de estos pasos:
+- Transformación de los datos
+- EDA
+
+![alt text](image-1.png)
+
+En la rama "entrega2" se encuentra el desarrollo del Alcance entrega 2:
+- El notebook "002_proyect.ipynb" contiene un EDA más profundo que el inicial.
+- En el archivo "etl.py" está la función que ejecuta la Extracción y Transformación relacionada hasta el momento.
+
 
 ### Entregables:
 Repositorio Github con: 
 - Código relevante
 - Archivo README con todo el contexto, instrucciones para usar el repositorio y consideraciones
 - Gitignore para incluir solo archivos relevantes en el repositorio
+- EDA Jupiter Notebook
 
 Documentación:
 - Descripción del problema
