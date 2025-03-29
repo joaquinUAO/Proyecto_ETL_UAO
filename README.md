@@ -29,14 +29,15 @@ En la rama "entrega2" se encuentra el desarrollo del Alcance entrega 2:
 ## Alcance entregable 3
 
 La segunda entrega del proyecto consta de estos pasos:
-- Transformación de los datos
-- EDA
+- Data load in a SQL database
+- Dashboard: in PDF format
 
 ![alt text](image-2.png)
 
 En la rama "entrega3" se encuentra el desarrollo del Alcance entrega 3:
 - En el archivo "etl.py" actualizado con el proceso ETL completo.
 - En el archivo "dag_etl.py" desarrollado para usar airflow.
+- "Dashboard_PowerBI.pdf" tablero desarrollado
 
 ### Entregables:
 Repositorio Github con: 
