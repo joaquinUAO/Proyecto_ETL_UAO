@@ -6,6 +6,7 @@ from sqlalchemy import create_engine, text
 import pandas as pd
 import kaggle
 import numpy as np
+import logging
 
 #rutaDatasetKaggle = "fedesoriano/electric-power-consumption"
 #file = "powerconsumption.csv"
@@ -95,9 +96,11 @@ def extraer_a_staging():
     # Estraemos el dataset directamente desde kaggle
     kaggle.api.dataset_download_files("fedesoriano/electric-power-consumption", unzip=True)
     file_csv = pd.read_csv("powerconsumption.csv", sep=",")
+    logging.info("Archivo descargado desde kaggle")
     # Configuramos los parámetros de conexión a la base de datos
     config = load_config()
     db_config = config["database"]
+    logging.info(config["database"])
     # Realizamos la conexión a la base de datos validando su existencia
     conn, engine, existe = conectar_bd(db_config)        
     crear_tabla(conn, engine)        
