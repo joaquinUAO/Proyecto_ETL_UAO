@@ -26,6 +26,17 @@ En la rama "entrega2" se encuentra el desarrollo del Alcance entrega 2:
 - El notebook "002_proyect.ipynb" contiene un EDA más profundo que el inicial.
 - En el archivo "etl.py" está la función que ejecuta la Extracción y Transformación relacionada hasta el momento.
 
+## Alcance entregable 3
+
+La segunda entrega del proyecto consta de estos pasos:
+- Transformación de los datos
+- EDA
+
+![alt text](image-2.png)
+
+En la rama "entrega3" se encuentra el desarrollo del Alcance entrega 3:
+- En el archivo "etl.py" actualizado con el proceso ETL completo.
+- En el archivo "dag_etl.py" desarrollado para usar airflow.
 
 ### Entregables:
 Repositorio Github con: 
